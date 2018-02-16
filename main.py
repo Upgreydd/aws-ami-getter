@@ -2,9 +2,8 @@
 # -*- coding: utf-8 -*-
 import sys
 
-from bs4 import BeautifulSoup
 import requests
-from pprint import pprint
+from bs4 import BeautifulSoup
 
 region_bindings = {
     'US East N. Virginia': 'us-east-1',
