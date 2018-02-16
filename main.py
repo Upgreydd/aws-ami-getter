@@ -3,7 +3,7 @@
 import sys
 
 from bs4 import BeautifulSoup
-from pip._vendor import requests
+import requests
 from pprint import pprint
 
 region_bindings = {
@@ -87,7 +87,7 @@ if len(sys.argv) < 3:
     print(sys.argv[0] + ' ap-south-1 hvm-ebs')
 else:
     try:
-        ami_type = 0
+        ami_type = None
         for k, v in enumerate(machines_inv):
             if v == sys.argv[2]:
                 ami_type = k
@@ -97,8 +97,7 @@ else:
             print('[ERR] FIRST PARAM IS WRONG')
             exit(1)
 
-
-        if ami_type == 0:
+        if ami_type is None:
             print('[ERR] SECOND PARAM IS WRONG')
             exit(1)
 
